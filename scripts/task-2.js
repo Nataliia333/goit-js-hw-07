@@ -1,8 +1,8 @@
 /*Задание 2
-В HTML есть пустой список ul#ingredients.
-
-<ul id="ingredients"></ul>
-В JS есть массив строк.
+Напиши скрипт, который для каждого элемента массива ingredients 
+создаст отдельный li, после чего вставит все li за одну операцию 
+в список ul.ingredients. Для создания DOM-узлов используй 
+document.createElement().*/
 
 const ingredients = [
   'Картошка',
@@ -12,4 +12,11 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ];
-Напиши скрипт, который для каждого элемента массива ingredients создаст отдельный li, после чего вставит все li за одну операцию в список ul.ingredients. Для создания DOM-узлов используй document.createElement().*/
+
+let items = '';
+const list = document.querySelector('ul#ingredients');
+ingredients.forEach(item => {
+  items = document.createElement('li');
+  items.textContent = item;
+  list.append(items);
+})
