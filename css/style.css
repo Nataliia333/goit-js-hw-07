@@ -1,0 +1,11 @@
+#gallery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+#gallery img {
+  width: 90%;
+  border-radius: 10px;
+}

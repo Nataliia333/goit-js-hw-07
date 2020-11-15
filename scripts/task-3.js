@@ -1,13 +1,11 @@
 /*Задание 3
 Напиши скрипт для создания галлереи изображений по массиву данных.
-
-В HTML есть список ul#gallery.
-
-<ul id="gallery"></ul>
-Используй массив объектов images для создания тегов img вложенных в li. Для создания разметки используй шаблонные строки и insertAdjacentHTML().
-
+Используй массив объектов images для создания тегов img вложенных в li.
+Для создания разметки используй шаблонные строки и insertAdjacentHTML().
 Все элементы галереи должны добавляться в DOM за одну операцию вставки.
-Добавь минимальное оформление галереи флексбоксами или гридами через css-классы.
+Добавь минимальное оформление галереи флексбоксами или гридами через 
+css-классы.
+*/
 const images = [
   {
     url:
@@ -24,4 +22,13 @@ const images = [
       'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     alt: 'Group of Horses Running',
   },
-];*/
+];
+
+const galleryRef = document.querySelector('ul#gallery');
+ let text = ``;
+
+images.forEach(element => {
+ text += `<li> <img src="${element.url}" alt="${element.alt}"/> </li>`;
+   });
+
+galleryRef.insertAdjacentHTML ('afterbegin', text);
